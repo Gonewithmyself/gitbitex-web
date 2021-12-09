@@ -70,22 +70,22 @@ export class OrderFormComponent extends Component {
     }
 
     get baseBalance() {
-        let fund = StoreService.Trade.funds[this.object.product.baseCurrency];
+        let fund = StoreService.Trade.funds[this.object.product.baseCurrency.toLowerCase()];
         return fund ? Number(fund.available).toFixed(4) : '--'
     }
 
     get baseHold() {
-        let fund = StoreService.Trade.funds[this.object.product.baseCurrency];
+        let fund = StoreService.Trade.funds[this.object.product.baseCurrency.toLowerCase()];
         return fund ? Number(fund.hold).toFixed(4) : '--'
     }
 
     get quoteHold() {
-        let fund = StoreService.Trade.funds[this.object.product.quoteCurrency];
+        let fund = StoreService.Trade.funds[this.object.product.quoteCurrency.toLowerCase()];
         return fund ? Number(fund.hold).toFixed(4) : '--'
     }
 
     get quoteBalance() {
-        let fund = StoreService.Trade.funds[this.object.product.quoteCurrency];
+        let fund = StoreService.Trade.funds[this.object.product.quoteCurrency.toLowerCase()];
         return fund ? Number(fund.available).toFixed(4) : '--'
     }
 
