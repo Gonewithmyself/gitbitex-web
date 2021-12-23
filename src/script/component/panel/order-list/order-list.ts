@@ -39,7 +39,7 @@ export class OrderListPanelComponent extends Component {
         order.status = 'canceling';
         order.statusFormat = 'canceling';
 
-        HttpService.Order.cancelOrder(order.id).then(() => {
+        HttpService.Order.cancelOrder(order.productId, order.id).then(() => {
             order.status = 'cancelled';
             order.statusFormat = 'cancelled';
         })

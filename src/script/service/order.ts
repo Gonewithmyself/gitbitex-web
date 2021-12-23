@@ -48,8 +48,8 @@ export class OrderService extends Service {
         });
     }
 
-    cancelOrder(orderId: string) {
-        return this.request.delete(`/orders/${orderId}`);
+    cancelOrder(productId: string, orderId: string) {
+        return this.request.delete(`/orders/${orderId}?productId=${productId}`);
     }
 
     cancelAll(productId: string) {
